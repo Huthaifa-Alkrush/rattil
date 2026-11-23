@@ -1,0 +1,35 @@
+{
+ "name": "رتّل — تعلّم أحكام التجويد",
+ "short_name": "رتّل",
+ "description": "تعلّم أحكام التجويد بالبطاقات والتلاوة والألعاب، على منهج كتاب المنير",
+ "lang": "ar",
+ "dir": "rtl",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#0b4a40",
+ "theme_color": "#0d5c4f",
+ "categories": [
+  "education",
+  "books"
+ ],
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
