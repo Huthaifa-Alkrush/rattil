@@ -267,7 +267,7 @@ table.cmp td.ar{font-family:'Amiri Quran';font-size:19px}
 .modal{position:fixed;inset:0;background:rgba(20,25,20,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}
 .modal.on{display:flex}
 .mbox{background:var(--paper);border-radius:22px;max-width:760px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.35);border-top:8px solid var(--c)}
-.mhead{padding:18px 20px 8px;display:flex;align-items:flex-start;gap:12px}
+.mhead{padding:18px 20px 8px;display:flex;align-items:flex-start;gap:12px;position:sticky;top:0;z-index:3;background:var(--paper)}
 .mhead h3{margin:0;font-family:'Reem Kufi';font-size:26px;color:var(--c)}
 .mhead .x{margin-inline-start:auto;border:0;background:#efe5cf;width:36px;height:36px;border-radius:10px;font-size:18px;cursor:pointer}
 .mbody{padding:4px 20px 22px}
@@ -652,9 +652,10 @@ table.cmp td.ar .wsign{font-size:.55em}
  .card .front .letters{grid-area:l;margin:0;flex-wrap:nowrap;overflow:hidden;gap:4px}
  .card .front .letters span{width:28px;height:28px;font-size:15px;border-radius:8px;flex:0 0 auto}
  .card .front .letters span.cnt{width:auto;padding:0 8px;font-size:13px}
- .card .front::after{content:"‹";grid-area:c;font-size:30px;line-height:1;opacity:.85;position:relative}
+ .card .front::after{content:"";grid-area:c;width:11px;height:11px;border-left:3px solid currentColor;border-bottom:3px solid currentColor;transform:rotate(45deg);opacity:.85;margin-left:6px}
  .card .front .done{top:8px;left:30px;font-size:10.5px}
- .card .lockov{inset:auto auto 10px 32px;padding:2px 8px;font-size:11px}
+ .card .lockov{inset:8px auto auto 30px;padding:3px 7px;font-size:0;background:rgba(0,0,0,.35);border-radius:99px;line-height:1}
+ .card .lockov::before{content:"🔒";font-size:13px}
  .chnav{gap:3px;padding:4px;overflow:visible}
  .chnav button{flex:1;min-width:0;flex-direction:column;gap:2px;padding:6px 2px;font-size:12px;white-space:normal}
  .chnav .chn{display:none}.chnav .chs{display:block}
@@ -689,6 +690,51 @@ table.cmp td.ar .wsign{font-size:.55em}
  .mksvg .hs text{font-size:11px}
 }
 @keyframes sheetUp{from{transform:translateY(100%)}}
+
+.exrow{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;align-items:center}
+.exrow .recbox{display:contents}
+.exrow .recfb{flex-basis:100%}
+body.mopen{overflow:hidden}
+.subsec,.chban,.chapter{scroll-margin-top:80px}
+@media (max-width:640px){
+ .mbox{height:100dvh;max-height:100dvh;border-radius:0;border-top:0;animation:sheetUp .3s cubic-bezier(.2,.8,.2,1)}
+ .mhead{border-top:6px solid var(--c);box-shadow:0 4px 12px rgba(0,0,0,.06);padding:10px 14px 8px;align-items:center}
+ .mhead h3{font-size:22px}
+ .mhead .x{width:40px;height:40px;font-size:20px}
+ .mbody{padding:8px 14px 40px}
+ .exitem{gap:6px}
+ .exitem>div:last-child{width:100%}
+ .chnav{top:6px;padding:4px;border-radius:14px;margin:6px 0 12px}
+ .chnav button{flex-direction:row;gap:3px;padding:7px 2px;font-size:12px;border-radius:10px}
+ .chnav .chi{width:18px;height:18px}
+ .chnav .chi svg{width:18px;height:18px}
+ .chnav small{display:none}
+ table.cmp td{display:block;padding:5px 0;text-align:left;overflow:hidden}
+ table.cmp td::before{float:right;margin-left:10px;line-height:2}
+ table.cmp td:first-child{text-align:right;font-size:16px}
+ table.cmp td:last-child{text-align:left;padding-top:8px}
+ table.cmp td.ar{font-size:20px;line-height:2}
+}
+
+@media (max-width:640px){
+ .btn{white-space:nowrap}
+ .chnav .chi{display:none}
+ .chnav button{padding:9px 2px;font-size:12.5px;white-space:nowrap}
+ .wcard{gap:10px;padding:10px}
+ .wlbl{flex:0 0 42px;height:42px;font-size:17px;border-radius:12px}
+ .wref{flex-wrap:wrap;font-size:12.5px}
+ .gcats{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+ .gcat{justify-content:center;padding:8px 4px;font-size:12.5px;gap:4px;white-space:nowrap}
+ .gcat small{font-size:10px;padding:0 5px}
+ .gcat:last-child:nth-child(odd){grid-column:1/-1}
+ #modes{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;scroll-margin-top:8px}
+ #modes::-webkit-scrollbar{display:none}
+ #modes .btn{flex:0 0 auto}
+ .ghead{flex-wrap:nowrap;gap:6px;scroll-margin-top:8px}
+ .ghead .chips{flex-wrap:nowrap;gap:4px;overflow:hidden}
+ .ghead .chip{font-size:11.5px;padding:3px 7px;white-space:nowrap}
+ #chapWrap{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -947,7 +993,7 @@ table.cmp td.ar .wsign{font-size:.55em}
   </div>
 </section>
 
-<footer>رتّل — تطبيق التجويد · النسخة 1.14 (نسخة الجوال لاحقاً)</footer>
+<footer>رتّل — تطبيق التجويد · النسخة 1.15 (نسخة الجوال لاحقاً)</footer>
 </main>
 
 <div id="toast"></div>
@@ -1363,8 +1409,8 @@ function openLesson(k){
      <div class="sub" style="font-size:12.5px">التلاوة: الشيخ محمود خليل الحصري — المصحف المعلّم · المصدر: EveryAyah · <a href="${audioURL(r.ex[0].s,r.ex[0].a)}" target="_blank" rel="noopener">استمع بقارئ آخر (من الإعدادات)</a></div>
      <div class="exlist">${(k==='lazim'&&store.lvl<3?r.ex.slice(0,2):r.ex).map(e=>`<div class="exitem"><div class="ar">${hl(e.t,e.h,r.c)}</div>
         <div><div class="ref">${e.sub&&store.lvl>=3?`<b style="color:${r.c}">${e.sub}</b> · `:''}${ref(e)}</div>
-        <div style="display:flex;gap:6px;margin-top:4px"><button class="btn pri sm" data-play="${e.s}:${e.a}">🔊 استمع</button>
-        <a class="btn ghost sm" href="https://quran.com/${e.s}/${e.a}" target="_blank" rel="noopener">المصحف</a></div>${CAN_REC?`<div class="recbox" data-rec="${e.s}:${e.a}" data-k="${k}"></div>`:''}</div></div>`).join('')}</div>
+        <div class="exrow"><button class="btn pri sm" data-play="${e.s}:${e.a}">🔊 استمع</button>
+        <a class="btn ghost sm" href="https://quran.com/${e.s}/${e.a}" target="_blank" rel="noopener">المصحف</a>${CAN_REC?`<div class="recbox" data-rec="${e.s}:${e.a}" data-k="${k}"></div>`:''}</div></div></div>`).join('')}</div>
      <h5>🎬 فيديو الدرس</h5>
      <div class="video"><b>قريباً</b>ستُضاف هنا مقاطع فيديو تشرح «${r.name}» بالصوت والصورة.</div>
      <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap">
@@ -1372,14 +1418,18 @@ function openLesson(k){
        <button class="btn ghost" id="mplay">🎮 تدرّب على هذا الحكم</button>
      </div>
    </div>`;
-  $('#modal').classList.add('on');
-  $('#mx').onclick=closeModal;
+  $('#modal').classList.add('on'); document.body.classList.add('mopen'); $('#mbox').scrollTop=0;
+  if(!MPUSH){ try{ history.pushState({m:1},''); MPUSH=true; }catch(e){} }
+  $('#mx').onclick=()=>closeModal();
   $('#mbox').querySelectorAll('[data-play]').forEach(b=>b.onclick=()=>playBtn(b));
   $('#mbox').querySelectorAll('.recbox').forEach(b=>renderRecBox(b));
   $('#mdone').onclick=()=>{store.seen[k]=1; save(); renderCards(); closeModal();};
-  $('#mplay').onclick=()=>{closeModal(); go('game'); startGame('ex');};
+  $('#mplay').onclick=()=>{closeModal(true); go('game'); startGame('ex');};
 }
-function closeModal(){$('#modal').classList.remove('on'); stopAudio(); if(typeof stopRec==='function'){ stopRec(); myAudio.pause(); }}
+let MPUSH=false;
+function closeModal(noBack){ if(!$('#modal').classList.contains('on')) return; $('#modal').classList.remove('on'); document.body.classList.remove('mopen'); stopAudio(); if(typeof stopRec==='function'){ stopRec(); myAudio.pause(); }
+  if(MPUSH){ MPUSH=false; if(!noBack) try{ history.back(); }catch(e){} } }
+window.addEventListener('popstate',()=>{ if($('#modal').classList.contains('on')){ MPUSH=false; closeModal(true); } });
 $('#modal').onclick=e=>{if(e.target.id==='modal') closeModal();};
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal();});
 
@@ -1467,9 +1517,10 @@ const rnd=a=>a[Math.floor(Math.random()*a.length)];
 function chapOk(k){const c=($('#gChap')||{}).value||'all', g=RULES[k].group; if(c==='all') return true; if(c==='madd') return g==='madd'; if(c==='misc') return MISCG.includes(g); return !['madd',...MISCG].includes(g);}
 function sample(opts,ans,n){ if(opts.length<=n) return opts; return [ans,...shuffle(opts.filter(k=>k!==ans)).slice(0,n-1)]; }
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function gScroll(){ if(window.innerWidth<640) setTimeout(()=>{ const t=$('#modes').style.display==='none'?$('.ghead'):$('#modes'); t.scrollIntoView({behavior:'smooth',block:'start'}); },60); }
 document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#modes button').forEach(x=>{x.classList.toggle('pri',x===b);x.classList.toggle('ghost',x!==b);});
-  startGame(b.dataset.g);});
+  startGame(b.dataset.g); gScroll();});
 $('#gReset').onclick=()=>startGame(G.mode);
 $('#gChap').onchange=()=>startGame('ex');
 $('#gNext').onclick=nextQ;
@@ -1691,7 +1742,7 @@ function animatePose(box,id,letter,replay){
   const cap=box.parentElement&&box.parentElement.querySelector('.mkcap'); if(cap) cap.textContent=CAP[id]?('👅 '+CAP[id]):'';
 }
 function sideSVG(big){
-  const R=(big?9.5:8.5)*(window.innerWidth<640?1.3:1);
+  const R=(big?9.5:8.5)*(window.innerWidth<640?1.12:1);
   return `<svg viewBox="96 140 322 350" class="mksvg" role="img" aria-label="رسم جانبي لمخارج الحروف">
   <path d="M300 30 C220 30 172 62 162 112 L154 150 C146 168 118 184 108 200 C102 211 114 219 130 221 L140 232 L152 300 C150 322 156 346 176 360 C202 373 242 372 272 380 L300 500 L470 500 L470 385 C520 330 545 250 522 170 C500 80 420 30 300 30 Z" fill="#f7e1d0" stroke="#b89a7a" stroke-width="2.5" stroke-linejoin="round"/>
   <path d="M162 240 C210 208 290 203 332 214 C354 222 362 240 360 262 C356 300 350 330 340 362 L250 374 C210 342 180 300 166 270 Z" fill="#7b3040"/>
@@ -2051,7 +2102,7 @@ function renderGcats(){
     return `<button class="gcat ${G.cat===c.k?'on':''}" data-c="${c.k}">${c.n}${c.k!=='exam'?`<small>${open}/${bs.length}</small>`:''}</button>`; }).join('');
   $('#gcats').querySelectorAll('.gcat').forEach(b=>b.onclick=()=>{
     const first=[...document.querySelectorAll(`#modes [data-cat="${b.dataset.c}"]`)].find(x=>!x.disabled);
-    if(first) startGame(first.dataset.g); });
+    if(first){ startGame(first.dataset.g); gScroll(); } });
   if(G.cat) showCatOnly(G.cat);
 }
 
