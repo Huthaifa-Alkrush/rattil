@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" translate="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google" content="notranslate">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0d5c4f">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
@@ -622,6 +623,72 @@ table.cmp td.ar .wsign{font-size:.55em}
 .rdot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#fff;margin:0 6px;animation:rdot 1s infinite}
 @keyframes rdot{50%{opacity:.2}}
 .rtime{font-variant-numeric:tabular-nums}
+.chs{display:none}
+.recfb{background:#fbf7ee;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-top:8px;width:100%}
+.fbh{font-weight:800;color:var(--primary);margin:6px 0 6px;font-size:14px}
+.wcv{width:100%;height:100px;display:block;background:#fff;border-radius:10px;border:1px solid var(--line)}
+.wlegend{display:flex;gap:14px;font-size:12.5px;margin-top:6px;flex-wrap:wrap}
+.wlegend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:5px;vertical-align:middle}
+.wmsg{font-weight:700;font-size:13.5px;margin-top:4px}
+.chk{display:flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.chk span{flex:1}
+.chk button{border:1.5px solid var(--line);background:#fff;border-radius:9px;padding:4px 12px;font:inherit;font-weight:700;cursor:pointer}
+.chk button[data-v="1"].on{background:#0f8a6a;border-color:#0f8a6a;color:#fff}
+.chk button[data-v="0"].on{background:#b23b3b;border-color:#b23b3b;color:#fff}
+.fbact{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.fbres{margin-top:8px}
+.fbok{background:#e3f4ec;border-radius:10px;padding:8px 10px;font-weight:700;color:#0f6b52}
+.fbbad{background:#fdecea;border-radius:10px;padding:8px 10px;font-size:14px}
+.fbbad ul{margin:4px 0 6px;padding-inline-start:18px}
+.fbwarn{color:#b23b3b;font-weight:700;font-size:13.5px}
+@media (max-width:640px){
+ .grid{grid-template-columns:1fr;gap:8px}
+ .card{height:auto;perspective:none}
+ .card .card-in{transform:none!important;height:auto}
+ .card .face.back{display:none}
+ .card .face.front{position:relative;inset:auto;display:grid;grid-template-columns:1fr auto;grid-template-areas:"t c" "l c";align-items:center;gap:6px 10px;padding:12px 14px;border-radius:16px}
+ .card .front .tag,.card .front .mn,.card .front .hint{display:none}
+ .card .front h3{grid-area:t;font-size:19px;margin:0}
+ .card .front .letters{grid-area:l;margin:0;flex-wrap:nowrap;overflow:hidden;gap:4px}
+ .card .front .letters span{width:28px;height:28px;font-size:15px;border-radius:8px;flex:0 0 auto}
+ .card .front .letters span.cnt{width:auto;padding:0 8px;font-size:13px}
+ .card .front::after{content:"‹";grid-area:c;font-size:30px;line-height:1;opacity:.85;position:relative}
+ .card .front .done{top:8px;left:30px;font-size:10.5px}
+ .card .lockov{inset:auto auto 10px 32px;padding:2px 8px;font-size:11px}
+ .chnav{gap:3px;padding:4px;overflow:visible}
+ .chnav button{flex:1;min-width:0;flex-direction:column;gap:2px;padding:6px 2px;font-size:12px;white-space:normal}
+ .chnav .chn{display:none}.chnav .chs{display:block}
+ .chnav small{font-size:10px;padding:0 5px}
+ .chban{padding:14px;gap:12px}
+ .chban p{display:none}
+ .chban h2{font-size:22px}
+ .subsec{padding:12px;margin:12px 0}
+ .rrow{grid-template-columns:1fr auto;gap:6px}
+ .rrow .slots{grid-column:1/-1;order:3}
+ .slot{height:22px}
+ table.cmp,table.cmp tbody{display:block;border:0;box-shadow:none;background:transparent}
+ table.cmp tr:first-child{display:none}
+ table.cmp tr{display:block;background:#fff;border:1px solid var(--line);border-right:5px solid var(--c);border-radius:14px;margin-bottom:8px;padding:8px 12px}
+ table.cmp td{display:flex;justify-content:space-between;align-items:center;gap:10px;border:0!important;padding:4px 0;text-align:left}
+ table.cmp td::before{content:attr(data-label);color:var(--muted);font-size:12px;font-weight:700;font-family:Tajawal,sans-serif;flex:0 0 auto;text-align:right}
+ table.cmp td:first-child{font-size:16px;justify-content:flex-start;text-align:right}
+ table.cmp td:first-child::before,table.cmp td:last-child::before{display:none}
+ table.cmp td:last-child{justify-content:flex-end}
+ table.cmp td.ar{font-size:20px}
+ .modal{align-items:flex-end;padding:0}
+ .mbox{max-height:93vh;border-radius:22px 22px 0 0;animation:sheetUp .35s cubic-bezier(.2,.8,.2,1)}
+ .mhead{padding:14px 16px 6px}.mbody{padding:4px 16px 90px}
+ .exitem{padding:10px}
+ .exitem .ar{min-width:0;flex-basis:100%;font-size:21px}
+ .stats{display:flex!important;gap:6px;justify-content:center;flex-wrap:wrap}
+ .stat,.stat.ring{display:flex;align-items:center;gap:4px;padding:4px 10px;border-radius:99px;min-width:0;flex:0 0 auto}
+ .stat b,.ring b{position:static;font-size:14px}
+ .stat span{display:inline-block;font-size:0}
+ .stat span::first-letter{font-size:14px}
+ .ring svg{display:none}
+ .mksvg .hs text{font-size:11px}
+}
+@keyframes sheetUp{from{transform:translateY(100%)}}
 </style>
 </head>
 <body>
@@ -657,7 +724,7 @@ table.cmp td.ar .wsign{font-size:.55em}
       <div class="lvbar" id="lvbar"></div>
     </div>
     <div class="stats">
-      <div class="stat ring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" class="rbg"/><circle cx="32" cy="32" r="27" class="rfg" id="ringFg"/></svg><b id="sPct">0%</b><span>دروس مستواك</span></div>
+      <div class="stat ring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" class="rbg"/><circle cx="32" cy="32" r="27" class="rfg" id="ringFg"/></svg><b id="sPct">0%</b><span>📖 دروس مستواك</span></div>
       <div class="stat"><b id="sStreak">1</b><span>🔥 أيام متتالية</span></div>
       <div class="stat"><b id="sBadges">0</b><span>🏅 شارات</span></div>
       <div class="stat"><b id="sBest">0</b><span>⭐ أعلى نقاط</span></div>
@@ -880,7 +947,7 @@ table.cmp td.ar .wsign{font-size:.55em}
   </div>
 </section>
 
-<footer>رتّل — تطبيق التجويد · النسخة 1.13 (نسخة الجوال لاحقاً)</footer>
+<footer>رتّل — تطبيق التجويد · النسخة 1.14 (نسخة الجوال لاحقاً)</footer>
 </main>
 
 <div id="toast"></div>
@@ -1260,10 +1327,11 @@ function renderCards(){
   $('#gQalq').innerHTML=['qalqala','qalqS','qalqK'].map(cardHTML).join('');
   $('#gLam').innerHTML=['lamS','lamQ','jalT','jalR','lamFH'].map(cardHTML).join('');
   $('#gRa').innerHTML=['raT','raR','raJ'].map(cardHTML).join('');
-  renderQBounce(); renderRaTree(); renderWaqf(); renderChapters(); renderSummaries();
+  renderQBounce(); renderRaTree(); renderWaqf(); renderChapters(); renderSummaries(); labelTables();
   $('#ruler').innerHTML=`<div class="sub" style="margin:0 0 6px">انقر الرقم ليمتلئ الشريط بإيقاع الحركات (الحركة ≈ زمن قبض الإصبع أو بسطه).</div>`+MADD.filter(unlocked).sort((a,b)=>Math.max(...RULES[a].counts)-Math.max(...RULES[b].counts)).map(rulerRow).join('');
   document.querySelectorAll('.card').forEach(c=>c.onclick=ev=>{
     if(c.classList.contains('locked')){ toast(lockTxt(RULES[c.dataset.k].lvl)); return; }
+    if(window.matchMedia('(max-width:640px)').matches){ openLesson(c.dataset.k); return; }
     const pb=ev.target.closest('[data-play]'); if(pb){ev.stopPropagation(); playBtn(pb); return;}
     const o=ev.target.closest('[data-open]'); if(o){ev.stopPropagation(); openLesson(o.dataset.open); return;}
     c.classList.toggle('flip');
@@ -1296,7 +1364,7 @@ function openLesson(k){
      <div class="exlist">${(k==='lazim'&&store.lvl<3?r.ex.slice(0,2):r.ex).map(e=>`<div class="exitem"><div class="ar">${hl(e.t,e.h,r.c)}</div>
         <div><div class="ref">${e.sub&&store.lvl>=3?`<b style="color:${r.c}">${e.sub}</b> · `:''}${ref(e)}</div>
         <div style="display:flex;gap:6px;margin-top:4px"><button class="btn pri sm" data-play="${e.s}:${e.a}">🔊 استمع</button>
-        <a class="btn ghost sm" href="https://quran.com/${e.s}/${e.a}" target="_blank" rel="noopener">المصحف</a></div>${CAN_REC?`<div class="recbox" data-rec="${e.s}:${e.a}"></div>`:''}</div></div>`).join('')}</div>
+        <a class="btn ghost sm" href="https://quran.com/${e.s}/${e.a}" target="_blank" rel="noopener">المصحف</a></div>${CAN_REC?`<div class="recbox" data-rec="${e.s}:${e.a}" data-k="${k}"></div>`:''}</div></div>`).join('')}</div>
      <h5>🎬 فيديو الدرس</h5>
      <div class="video"><b>قريباً</b>ستُضاف هنا مقاطع فيديو تشرح «${r.name}» بالصوت والصورة.</div>
      <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap">
@@ -1325,6 +1393,7 @@ function renderCmp(){
    <td><button class="btn ghost sm" data-open="${k}">الدرس</button></td></tr>`;}).join('');
   $('#cmp').innerHTML=`<tr><th>الحكم</th><th>الحروف</th><th>غنة؟</th><th>تشديد؟</th><th>مثال</th><th></th></tr>${rows}`;
   $('#cmp').querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openLesson(b.dataset.open));
+  labelTables();
 }
 
 /* ============ LETTER TABLE ============ */
@@ -1589,10 +1658,10 @@ const POSE={rest:[174,268,190,250,230,236,270,238,320,240,346,256,352,286],
  12:[173,240,177,234,222,236,268,240,320,242,346,256,352,286],
  13:[171,282,186,262,228,246,270,244,320,244,346,258,352,286],
  14:[159,259,173,248,224,240,270,242,320,242,346,256,352,286]};
-const LIPS={rest:'M150 236 C136 238 126 250 130 266 L152 266 Z M152 272 L131 272 C126 286 132 298 152 300 Z',
- closed:'M150 236 C136 238 125 252 129 269 L152 269 Z M152 269 L129 269 C125 286 132 298 152 300 Z',
- round:'M150 236 C128 238 114 252 118 265 L152 265 Z M152 273 L119 273 C116 288 130 298 152 300 Z',
- f:'M150 236 C136 238 126 250 130 262 L152 262 Z M157 263 L137 264 C128 284 134 298 152 300 Z'};
+const LIPS={rest:'M156 232 C146 230 134 236 131 246 C129 254 134 262 156 264 Z M156 272 C136 272 130 280 132 288 C135 298 146 302 158 300 Z',
+ closed:'M156 232 C146 230 132 238 129 250 C128 260 134 268 156 268 Z M156 268 C134 268 128 276 130 286 C133 298 146 302 158 300 Z',
+ round:'M156 232 C142 230 124 236 120 247 C118 256 126 263 156 264 Z M156 274 C126 274 119 280 121 289 C125 299 144 302 158 300 Z',
+ f:'M156 232 C146 230 134 236 131 246 C129 254 134 260 156 261 Z M160 262 C146 262 136 268 135 280 C136 294 146 301 158 300 Z'};
 const VELUM={up:'M332 212 C352 218 364 236 359 260',down:'M332 212 C348 224 352 246 341 268'};
 const CAP={1:'اللسان منخفض والفم مفتوح، والهواء يمتد في الجوف',2:'أقصى الحلق يتضيّق قرب الصدر',3:'وسط الحلق يتضيّق',4:'أدنى الحلق يتضيّق قرب الفم',5:'أقصى اللسان يرتفع إلى الحنك اللحمي',6:'أقصى اللسان يرتفع أمام مخرج القاف قليلاً',7:'وسط اللسان يرتفع إلى الحنك الأعلى',8:'حافة اللسان تلامس الأضراس العليا',9:'حافة اللسان وطرفه يلامسان اللثة',10:'طرف اللسان يلامس لثة الثنايا العليا',11:'طرف اللسان مع ظهره قرب اللثة',12:'طرف اللسان يلامس أصول الثنايا العليا',13:'طرف اللسان فوق الثنايا السفلى',14:'طرف اللسان يلامس أطراف الثنايا العليا',15:'الشفة السفلى تلامس أطراف الثنايا العليا',16:'الشفتان تنطبقان',17:'سقف الحلق الرخو ينخفض فيخرج الصوت من الأنف'};
 function poseOf(id,letter){
@@ -1622,10 +1691,10 @@ function animatePose(box,id,letter,replay){
   const cap=box.parentElement&&box.parentElement.querySelector('.mkcap'); if(cap) cap.textContent=CAP[id]?('👅 '+CAP[id]):'';
 }
 function sideSVG(big){
-  const R=big?9.5:8.5;
+  const R=(big?9.5:8.5)*(window.innerWidth<640?1.3:1);
   return `<svg viewBox="96 140 322 350" class="mksvg" role="img" aria-label="رسم جانبي لمخارج الحروف">
-  <path d="M300 30 C220 30 172 62 162 112 L154 150 C146 168 118 184 108 200 C102 211 114 219 130 221 L138 238 C128 246 124 258 132 268 C125 276 125 291 136 299 C140 322 152 346 176 360 C202 373 242 372 272 380 L300 500" fill="none" stroke="#8a7a5a" stroke-width="3" stroke-linecap="round"/>
-  <path d="M470 500 L470 385 C520 330 545 250 522 170 C500 80 420 30 300 30" fill="none" stroke="#8a7a5a" stroke-width="3"/>
+  <path d="M300 30 C220 30 172 62 162 112 L154 150 C146 168 118 184 108 200 C102 211 114 219 130 221 L140 232 L152 300 C150 322 156 346 176 360 C202 373 242 372 272 380 L300 500 L470 500 L470 385 C520 330 545 250 522 170 C500 80 420 30 300 30 Z" fill="#f7e1d0" stroke="#b89a7a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M162 240 C210 208 290 203 332 214 C354 222 362 240 360 262 C356 300 350 330 340 362 L250 374 C210 342 180 300 166 270 Z" fill="#7b3040"/>
   <path class="ag" data-area="khay" d="M150 176 C200 163 300 163 348 196 C300 208 200 208 150 196 Z" fill="#aed6f1" stroke="#2e86c1" stroke-width="1.5"/>
   <path class="ag" data-area="jawf" d="M176 262 C220 226 300 222 352 246 C386 300 393 400 393 472 L362 472 C352 400 346 330 300 300 C250 282 202 282 176 262 Z" fill="#16a085" fill-opacity=".10" stroke="#16a085" stroke-dasharray="6 5" stroke-width="1.5"/>
   <path class="ag" data-area="halq" d="M358 258 C380 300 396 380 396 482 L360 482 C358 440 351 396 336 366 Z" fill="#fadbd8" stroke="#c0392b" stroke-width="1.5"/>
@@ -1633,9 +1702,9 @@ function sideSVG(big){
   <path d="M166 238 C210 206 290 200 332 212" fill="none" stroke="#e59866" stroke-width="7" stroke-linecap="round"/>
   <path class="velum" d="${VELUM.up}" fill="none" stroke="#f0b27a" stroke-width="7" stroke-linecap="round"/>
   <path class="ag tongue" data-area="lisan" d="${T(POSE.rest)}" fill="#f1948a" stroke="#cb4335" stroke-width="1.5"/>
-  <rect x="152" y="236" width="15" height="27" rx="4" fill="#fff" stroke="#999"/>
-  <rect x="157" y="271" width="14" height="24" rx="4" fill="#fff" stroke="#999"/>
-  <path class="ag lips" data-area="shafa" d="${LIPS.rest}" fill="#e6b0aa" stroke="#8e44ad" stroke-width="1.5"/>
+  <path d="M151 236 L166 236 L166 257 C163 264 154 264 151 257 Z" fill="#fffef6" stroke="#c9bfa8" stroke-width="1.2"/>
+  <path d="M156 296 L170 296 L170 279 C167 272 159 272 156 279 Z" fill="#fffef6" stroke="#c9bfa8" stroke-width="1.2"/>
+  <path class="ag lips" data-area="shafa" d="${LIPS.rest}" fill="#d47f86" stroke="#b5606a" stroke-width="0.8" stroke-linejoin="round"/>
   <text x="300" y="160" class="lbl">الأنف</text><text x="265" y="300" class="lbl">اللسان</text><text x="410" y="300" class="lbl" style="text-anchor:end">الحلق</text>
   ${MKH.map(m=>`<g class="hs" data-m="${m.id}" style="--c:${AREAS[m.area].c}"><title>${m.name}</title><circle cx="${m.side[0]}" cy="${m.side[1]}" r="${R}"/><text x="${m.side[0]}" y="${m.side[1]}">${m.id}</text></g>`).join('')}
   </svg>`;
@@ -1699,7 +1768,7 @@ function selMkh(id,letter){
    <h5>📖 مثال</h5><div class="exitem"><div class="ar">${hl(e.t,e.h,c)}</div><div><div class="ref">${ref(e)}</div><button class="btn pri sm" data-play="${e.s}:${e.a}" style="margin-top:4px">🔊 استمع</button></div></div>`;
   $('#mkPanel').querySelector('[data-play]').onclick=ev=>playBtn(ev.currentTarget);
   if($('#replay')) $('#replay').onclick=()=>{ if(mkView!=='side'){mkView='side'; renderMkh();} animatePose($('#v-makharij .map'),id,letter,true); };
-  if(window.innerWidth<760) $('#mkPanel').scrollIntoView({behavior:'smooth',block:'start'});
+  
 }
 function initMkh(){
   buildMkList();
@@ -2155,7 +2224,10 @@ function renderSummaries(){
     SIGNS.map(sg=>`<tr style="--c:${sg.c}"><td><span class="wlbl sm">${sg.lbl}</span></td><td><b style="color:${sg.c}">${sg.n}</b></td><td>${WACT[sg.k]}</td><td class="ar">${signText(sg)}</td><td>${playBtnHTML(sg.s,sg.a)}</td></tr>`).join('');
   ['#sumMadd','#sumMisc'].forEach(id=>$(id).querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openLesson(b.dataset.open)));
   $('#sumWaqf').querySelectorAll('[data-play]').forEach(b=>b.onclick=()=>playBtn(b));
+  labelTables();
 }
+function labelTables(){ document.querySelectorAll('table.cmp').forEach(t=>{ const hs=[...t.querySelectorAll('tr:first-child th')].map(h=>h.textContent.trim());
+  t.querySelectorAll('tr').forEach(tr=>[...tr.children].forEach((td,i)=>{ if(td.tagName==='TD') td.setAttribute('data-label',hs[i]||''); })); }); }
 /* ============ CHAPTERS ============ */
 const CHS=[
  {k:'nm',ic:'🔤',n:'النون والميم',d:'أحكام النون الساكنة والتنوين، والميم الساكنة، والغنة',c:'#2563a8',g:['noon','meem','ghunna']},
@@ -2167,7 +2239,7 @@ function chStat(c){ const ks=Object.keys(RULES).filter(k=>c.g.includes(RULES[k].
 function renderChapters(){
   const cur=store.ch||'nm';
   $('#chnav').innerHTML=CHS.map(c=>{ const st=chStat(c), done=st.t&&st.d===st.t;
-    return `<button data-ch="${c.k}" style="--cc:${c.c}" class="${c.k===cur?'on':''}"><span class="chi">${icoSVG(c.k,false)}</span>${c.n}${st.t?`<small>${done?'✓':st.d+'/'+st.t}</small>`:''}</button>`; }).join('');
+    return `<button data-ch="${c.k}" style="--cc:${c.c}" class="${c.k===cur?'on':''}"><span class="chi">${icoSVG(c.k,false)}</span><span class="chn">${c.n}</span><span class="chs">${({nm:'النون والميم',madd:'المدود',misc:'متفرقة',waqf:'الوقف'})[c.k]}</span>${st.t?`<small>${done?'✓':st.d+'/'+st.t}</small>`:''}</button>`; }).join('');
   $('#chnav').querySelectorAll('button').forEach(b=>b.onclick=()=>showCh(b.dataset.ch,true));
   CHS.forEach(c=>{ const st=chStat(c), pct=st.t?Math.round(st.d/st.t*100):0;
     const wq=c.k==='waqf'?[1,1,2,2,2].filter(l=>l<=store.lvl).length:0;
@@ -2220,13 +2292,77 @@ function compareRec(key){
   player.onended=()=>{ player.onended=()=>resetBtn(); playMine(key); };
   player.play().catch(()=>{ player.onended=()=>resetBtn(); });
 }
+const CHK={
+ izhar:['هل نطقت النون واضحة دون غنة زائدة؟','هل انتقلت إلى حرف الحلق دون سكت أو تشديد؟','هل خرج حرف الحلق من مخرجه الصحيح؟'],
+ idghamG:['هل اختفت النون فلم تُنطق؟','هل شدّدت الحرف الذي بعدها؟','هل كانت الغنة بمقدار حركتين؟'],
+ idghamN:['هل اختفت النون تماماً؟','هل شدّدت اللام أو الراء؟','هل خلا الإدغام من أي غنة؟'],
+ iqlab:['هل قلبت النون ميماً؟','هل أطبقت شفتيك برفق دون ضغط؟','هل كانت الغنة بمقدار حركتين؟'],
+ ikhfa:['هل تجنّبت أن يلمس لسانك موضع النون؟','هل كانت الغنة بمقدار حركتين؟','هل تهيّأ لسانك لمخرج الحرف التالي؟'],
+ ikhfaS:['هل أطبقت شفتيك برفق دون ضغط؟','هل كانت الغنة بمقدار حركتين؟','هل نطقت الباء بعدها بوضوح؟'],
+ idghamS:['هل صارت الميمان ميماً واحدة مشددة؟','هل كانت الغنة بمقدار حركتين؟','هل تجنّبت الفصل بين الميمين؟'],
+ izharS:['هل نطقت الميم واضحة بإطباق الشفتين؟','هل تجنّبت إخفاء الميم، خاصة قبل الواو والفاء؟','هل خلت الميم من غنة زائدة؟'],
+ ghunna:['هل أمسكت الغنة حركتين كاملتين؟','هل خرج الصوت من الخيشوم؟','هل تجنّبت تقصير الغنة أو المبالغة فيها؟'],
+ qalq:['هل سكّنت حرف القلقلة دون أن تحرّكه؟','هل ظهرت النبرة (الارتداد) بوضوح؟','هل تجنّبت إضافة حركة بعد الحرف مثل «قِ» أو «قَ»؟'],
+ lamS:['هل أسقطت اللام فلم تنطقها؟','هل شدّدت الحرف الذي بعدها؟','هل نطقت الهمزة في أول «ال» عند الابتداء بها؟'],
+ lamQ:['هل نطقت اللام ساكنة واضحة؟','هل تجنّبت تشديد الحرف الذي بعدها؟','هل خلت اللام من أي حركة؟'],
+ jalT:['هل فخّمت اللام حتى امتلأ الفم بصوتها؟','هل كان قبلها فتح أو ضم؟','هل تجنّبت تفخيم الحرف الذي قبلها؟'],
+ jalR:['هل رقّقت اللام؟','هل لاحظت الكسرة قبلها؟','هل تجنّبت تفخيمها كما بعد الفتح؟'],
+ lamFH:['هل أظهرت اللام في «قُلْ هُوَ»؟','هل أدغمتها في اللام أو الراء بعدها؟','هل تجنّبت قلقلة اللام؟'],
+ raT:['هل امتلأ فمك بصوت الراء (تفخيم)؟','هل تجنّبت تكرير الراء؟','هل لاحظت حركة الراء أو ما قبلها؟'],
+ raR:['هل نطقت الراء رقيقة نحيفة؟','هل تجنّبت تكرير الراء؟','هل لاحظت الكسرة أو الياء قبلها؟'],
+ raJ:['هل اخترت وجهاً واحداً (تفخيم أو ترقيق)؟','هل التزمت به في المواضع المتشابهة؟','هل تجنّبت تكرير الراء؟']};
+function checksFor(k){ const r=RULES[k]; if(CHK[k]) return CHK[k]; if(r.group==='qalq') return CHK.qalq;
+  if(r.group==='madd') return [`هل مددت الصوت ${countsTxt(r.counts)}؟`,'هل كان طول مدّك قريباً من مدّ الحصري؟','هل حافظت على المقدار نفسه في المدود المتشابهة؟'];
+  return ['هل طبّقت الحكم كما سمعته؟','هل كانت مخارج الحروف صحيحة؟','هل تجنّبت الإسراع؟']; }
+let AC2=null;
+function envelope(buf,n){ const d=buf.getChannelData(0), step=Math.max(1,Math.floor(d.length/n)), out=[]; for(let i=0;i<n;i++){ let m=0; for(let j=i*step;j<Math.min(d.length,(i+1)*step);j+=4){ const v=Math.abs(d[j]); if(v>m) m=v; } out.push(m); } return out; }
+function voicedSec(buf){ const env=envelope(buf,400), mx=Math.max(...env)||1, th=mx*0.08; let a=env.findIndex(v=>v>th), b=env.length-1-[...env].reverse().findIndex(v=>v>th); if(a<0) return 0; return (b-a+1)/env.length*buf.duration; }
+async function drawWaves(cv,key,blob){
+  const [s,a]=key.split(':'); const ctx=cv.getContext('2d'); const W=cv.width=cv.clientWidth*2, H=cv.height=200; ctx.clearRect(0,0,W,H);
+  try{ AC2=AC2||new (window.AudioContext||window.webkitAudioContext)();
+    const ra=await (await fetch(`audio/${pad(+s)}${pad(+a)}.mp3`)).arrayBuffer(), ua=await blob.arrayBuffer();
+    const [rb,ub]=await Promise.all([AC2.decodeAudioData(ra),AC2.decodeAudioData(ua)]);
+    const n=Math.floor(W/4), rs=voicedSec(rb), us=voicedSec(ub), mxd=Math.max(rb.duration,ub.duration);
+    [[rb,'#b8892d',0],[ub,'#0f8a6a',100]].forEach(([b,c,y0])=>{ const env=envelope(b,Math.floor(n*b.duration/mxd)), mx=Math.max(...env)||1; ctx.fillStyle=c;
+      env.forEach((v,i)=>{ const h=Math.max(2,v/mx*80); ctx.fillRect(W-(i+1)*4,y0+50-h/2,3,h); }); });
+    const diff=(us-rs)/rs, pct=Math.round(Math.abs(diff)*100);
+    const msg=Math.abs(diff)<0.15?'✓ مدّة تلاوتك قريبة من مدّة الحصري':(diff<0?`تلاوتك أسرع بنحو ${pct}% — انتبه لمقادير المد والغنة`:`تلاوتك أبطأ بنحو ${pct}%`);
+    return `<div class="wlegend"><span><i style="background:#b8892d"></i>الحصري: ${rs.toFixed(1)} ث</span><span><i style="background:#0f8a6a"></i>أنت: ${us.toFixed(1)} ث</span></div><div class="wmsg">${msg}</div>`;
+  }catch(e){ return '<div class="wmsg">تعذّر رسم المقارنة على هذا الجهاز.</div>'; }
+}
+async function sendRec(key,k){
+  const blob=await dbGet(key); if(!blob) return; const [s,a]=key.split(':'), r=RULES[k];
+  const ext=(blob.type||'').includes('mp4')?'m4a':'webm', name=`رتل-${r.name}-${s}-${a}.${ext}`.replace(/\s+/g,'_');
+  const file=new File([blob],name,{type:blob.type||'audio/webm'}), text=`تسجيلي لحكم «${r.name}» — ${ref({s:+s,a:+a})} (من تطبيق رتّل)`;
+  try{ if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'تسجيلي في رتّل',text}); return; } }catch(e){ if(e&&e.name==='AbortError') return; }
+  const u=URL.createObjectURL(file), aEl=document.createElement('a'); aEl.href=u; aEl.download=name; document.body.appendChild(aEl); aEl.click(); aEl.remove(); setTimeout(()=>URL.revokeObjectURL(u),4000);
+  toast('حُفظ ملف التسجيل في التنزيلات. أرسله للمعلم من هناك.');
+}
+async function showFeedback(box){
+  const key=box.dataset.rec, k=box.dataset.k, blob=await dbGet(key); if(!blob) return;
+  let fb=box.nextElementSibling; if(!fb||!fb.classList.contains('recfb')){ fb=document.createElement('div'); fb.className='recfb'; box.after(fb); }
+  const qs=checksFor(k);
+  fb.innerHTML=`<div class="fbh">📊 قارن بنفسك</div><canvas class="wcv"></canvas><div class="wres"><div class="wmsg">… جارٍ التحليل</div></div>
+   <div class="fbh">✅ قيّم تلاوتك</div>${qs.map((q,i)=>`<div class="chk" data-i="${i}"><span>${q}</span><button data-v="1">نعم</button><button data-v="0">لا</button></div>`).join('')}
+   <div class="fbres"></div>
+   <div class="fbact"><button class="btn pri sm fbgo">النتيجة</button><button class="btn ghost sm fbsend">📤 أرسل للمعلم</button></div>
+   <p class="sub" style="font-size:12px;margin:6px 0 0">💡 اقرأ الآية كاملة كما سمعتها، ليكون قياس المدة صحيحاً. والتقييم الأدق يكون من المعلم.</p>`;
+  fb.querySelectorAll('.chk button').forEach(b=>b.onclick=()=>{ b.parentElement.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); });
+  fb.querySelector('.fbgo').onclick=()=>{ const ans=[...fb.querySelectorAll('.chk')].map(c=>{ const o=c.querySelector('button.on'); return o?o.dataset.v:null; });
+    if(ans.includes(null)){ fb.querySelector('.fbres').innerHTML='<div class="fbwarn">أجب عن الأسئلة الثلاثة أولاً.</div>'; return; }
+    const bad=qs.filter((q,i)=>ans[i]==='0');
+    fb.querySelector('.fbres').innerHTML=bad.length?`<div class="fbbad"><b>يحتاج تحسيناً:</b><ul>${bad.map(q=>`<li>${q.replace('هل ','').replace('؟','')}</li>`).join('')}</ul><b>💡 تذكير:</b> ${RULES[k].how}<br><span class="sub">سجّل مرة أخرى بعد التدرّب، ثم قارن.</span></div>`
+      :'<div class="fbok">🌟 أحسنت! تلاوتك سليمة على هذا الحكم حسب تقييمك. للتأكد، أرسلها للمعلم.</div>'; };
+  fb.querySelector('.fbsend').onclick=()=>sendRec(key,k);
+  fb.querySelector('.wres').innerHTML=await drawWaves(fb.querySelector('.wcv'),key,blob);
+}
 async function renderRecBox(box,recording){
   const key=box.dataset.rec;
-  if(recording){ box.innerHTML=`<button class="btn sm recbtn on">⏹ إيقاف <span class="rdot"></span><span class="rtime">0 ث</span></button>`; box.querySelector('.recbtn').onclick=stopRec; return; }
+  if(recording){ box.innerHTML=`<button class="btn sm recbtn on">⏹ إيقاف <span class="rdot"></span><span class="rtime">0 ث</span></button><span class="sub" style="font-size:12px;align-self:center">اقرأ الآية كاملة</span>`; box.querySelector('.recbtn').onclick=stopRec; return; }
   const has=!!(await dbGet(key));
-  box.innerHTML=`<button class="btn ghost sm recbtn">🎙️ ${has?'أعد التسجيل':'سجّل تلاوتك'}</button>`+(has?`<button class="btn ghost sm" data-act="mine">▶️ تسجيلي</button><button class="btn ghost sm" data-act="cmp">🔁 قارن</button>`:'');
-  box.querySelector('.recbtn').onclick=()=>startRec(key,box);
-  if(has){ box.querySelector('[data-act=mine]').onclick=()=>{ stopAudio(); playMine(key); }; box.querySelector('[data-act=cmp]').onclick=()=>compareRec(key); }
+  box.innerHTML=`<button class="btn ghost sm recbtn">🎙️ ${has?'أعد التسجيل':'سجّل تلاوتك'}</button>`+(has?`<button class="btn ghost sm" data-act="mine">▶️ تسجيلي</button><button class="btn pri sm" data-act="cmp">🔁 قارن وقيّم</button>`:'');
+  box.querySelector('.recbtn').onclick=()=>{ const fb=box.nextElementSibling; if(fb&&fb.classList.contains('recfb')) fb.remove(); startRec(key,box); };
+  if(has){ box.querySelector('[data-act=mine]').onclick=()=>{ stopAudio(); playMine(key); }; box.querySelector('[data-act=cmp]').onclick=()=>{ compareRec(key); showFeedback(box); }; }
 }
 async function updRecCount(){ const el=$('#recCount'); if(el) el.textContent=(await dbCount())+' تسجيل'; }
 function initRecSettings(){
